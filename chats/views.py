@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.generic.edit import FormView
 
-# Create your views here.
+
+class ChatView(FormView):
+    def get(self, request):
+        return HttpResponse('Chats result')
+
+    def post(self, request):
+        return HttpResponse('Chats result: post')

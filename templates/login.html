@@ -1,0 +1,23 @@
+{% extends 'user_interface/index.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+    <div class="login-window">
+        <form class="form-signin" role="form" method="post">
+            {% csrf_token %}
+            <h2 class="form-signin-heading" style="text-align: center;">Log In</h2>
+            {{ form.username }}
+            {{ form.passwrd }}
+            {{ form.city }}
+
+            {% if message %}
+                <div class="alert alert-danger" role="alert">{{ message }}</div>
+            {% endif %}
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+        </form>
+    </div>
+
+{% endblock %}
